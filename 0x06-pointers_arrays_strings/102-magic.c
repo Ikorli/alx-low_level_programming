@@ -1,11 +1,7 @@
 #include <stdio.h>
 
-/**
- * main - Adds one line to this code so that the program prints a[2] = 98
- *
- * Return: Always 0
- */
 int main(void)
+
 {
 int n;
 int a[5];
