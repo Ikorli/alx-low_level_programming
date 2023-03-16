@@ -1,0 +1,1 @@
+0x0C. C - More malloc, free 0Write a function that allocates memory using malloc. 1Write a function that concatenates two strings. 2Write a function that allocates memory for an array, using malloc. 3Write a function that creates an array of integers. 4Write a function that reallocates a memory block using malloc and free 5Write a program that multiplies two positive numbers.
