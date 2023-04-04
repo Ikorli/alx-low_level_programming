@@ -27,8 +27,6 @@ size_t print_listint_safe(const listint_t *head)
 			exit(98);
 		}
 	}
-
-	/* Print remaining nodes in the list */
 	while (slow)
 	{
 		nodes++;
