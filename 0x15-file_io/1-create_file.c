@@ -1,5 +1,6 @@
 #include "main.h"
-#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
  * create_file - Creates a file and writes content to it.
@@ -10,17 +11,28 @@
  */
 int create_file(const char *filename, char *text_content)
 {
+	int fd, w, len = 0;
+
 	if (filename == NULL)
 		return (-1);
 
-	FILE *file = fopen(filename, "w");
+	if (text_content != NULL)
+	{
+		while (text_content[len])
+			len++;
+	}
 
-	if (file == NULL)
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (fd == -1)
 		return (-1);
 
-	if (text_content != NULL)
-		fputs(text_content, file);
+	w = write(fd, text_content, len);
+	if (w == -1)
+	{
+		close(fd);
+		return (-1);
+	}
 
-	fclose(file);
+	close(fd);
 	return (1);
 }
